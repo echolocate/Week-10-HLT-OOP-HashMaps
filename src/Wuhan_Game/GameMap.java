@@ -1,13 +1,12 @@
 package Wuhan_Game;
 
 public class GameMap {
-	private String facility;
 	private int x;
 	private int y;
 	private int currentX;
 	private int currentY;
-	private int ltCurrentX; // LabTech position X
-	private int ltCurrentY; // and Y, reversed to Virus
+	private int ltCurrentX; // LabTech position X and Y, reversed
+	private int ltCurrentY; // in relation to Virus position
 	
 	// Virus position Getters and Setters (players character)
 	public int getCurrentX() {

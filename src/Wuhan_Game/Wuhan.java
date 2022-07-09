@@ -9,9 +9,10 @@ public class Wuhan {
 		Virus covid = new Virus("Covid-19",10,3, false);
 		LabTech fauci = new LabTech("Dr. Fauci",10,3,false);
 		GameMap wuhan = new GameMap();
-	    int totalMoves = 0; 
+	    int totalMoves = 14;
+	    boolean isVaccinated;
 		wuhan.setX(10); // Map area.
-		wuhan.setY(10); // Adjust for preference.
+		wuhan.setY(10); // Adjust for larger or smaller map.
 		
 		// set random start position for current x and y
 		int x = 1 + (int) (Math.random() * 10);
@@ -21,9 +22,22 @@ public class Wuhan {
 		wuhan.setLtCurrentX(y); // experimental, reverse the
 		wuhan.setLtCurrentY(x); // coordinates of player start position.
 		
+		// set random 1 or 2, is LabTech vaccinated?
+		int randVac = 1 + (int) (Math.random() * 2);
+		if (randVac == 1) {
+			isVaccinated = true;
+		} else {
+			isVaccinated = false;
+		}
+		
+		fauci.setVaccinated(isVaccinated);
+		System.out.println(fauci.getName() + " vaccinated ? " + fauci.isVaccinated());
+		
+		
 		
 		System.out.println("Map size: " + wuhan.getX() + ", " + wuhan.getY());  
 		System.out.println("your location: " + wuhan.getCurrentX() + ", " + wuhan.getCurrentY());  
+		// Remove next line in final version, just for testing game.
 		System.out.println("labtech location: " + wuhan.getLtCurrentX() + ", " + wuhan.getLtCurrentY());  
 
 		
@@ -34,10 +48,10 @@ public class Wuhan {
 		System.out.println("Hello " + covid.getName());
 		
 		System.out.println("Choose a path wisely...");
-		System.out.println(fauci.getName() + " is on your ass.");
+		System.out.println(fauci.getName() + " is lurking around the lab.");
 		System.out.println("(N)orth, (S)outh, (E)ast or (W)est.");
 		do {
-		System.out.println("Direction ?");
+		System.out.print("Direction ?" );
 		
 		String direction = sc.nextLine();
 		
@@ -54,11 +68,12 @@ public class Wuhan {
 		System.out.println("Collision = " + wuhan.collision(playerX, playerY, foeX, foeY));
 		boolean collided = wuhan.collision(playerX, playerY, foeX, foeY);
 
-		System.out.println();	
+		System.out.println(fauci.isVaccinated());	
 		
-		totalMoves ++;
+		totalMoves --;
+		System.out.println(totalMoves + " infection days remaining... ");
 		
-		} while (totalMoves<20);
+		} while (totalMoves>0);
 		
 
 		

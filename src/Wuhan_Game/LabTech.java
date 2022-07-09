@@ -3,8 +3,8 @@ package Wuhan_Game;
 public class LabTech extends Character{
 	private boolean vaccinated;
 	
-	public LabTech(String name, int lives, int health, boolean vaccinated) {
-		super(name, lives, health);
+	public LabTech(String name, int health, boolean vaccinated) {
+		super(name, health);
 		this.vaccinated = vaccinated;
 	}
 
