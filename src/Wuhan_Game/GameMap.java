@@ -106,8 +106,20 @@ public class GameMap {
 		}
 	}
 		
-//		public int updatePlayers(int plHealth, boolean ltVacc) {
-//			
-//		}
+		public void whoWins(boolean vax, int ltHealth, boolean mutant, int vHealth) {
+			if ((vax = true) && (mutant = true)) {
+				ltHealth -= 1;
+			} else if ((vax = false) && (mutant = true)) {
+				ltHealth -= 5;
+			} else if ((vax = true) && (mutant = false)) {
+				 vHealth = 0;
+			} else if ((vax = false) && (mutant = false)) {
+				mutant = true;
+				// maybe LabTech loses health too ???
+			}
+			
+			
+			
+		}
 	
 }
