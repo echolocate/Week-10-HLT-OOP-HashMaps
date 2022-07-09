@@ -1,6 +1,6 @@
 package Wuhan_Game;
 
-public class Character {	
+public abstract class Character {	
 		private String name;
 		private int lives;
 		private int health;

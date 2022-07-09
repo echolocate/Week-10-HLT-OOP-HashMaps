@@ -6,7 +6,44 @@ public class GameMap {
 	private int y;
 	private int currentX;
 	private int currentY;
+	private int ltCurrentX; // LabTech position X
+	private int ltCurrentY; // and Y, reversed to Virus
+	
+	// Virus position Getters and Setters (players character)
+	public int getCurrentX() {
+		return currentX;
+	}
 
+	public void setCurrentX(int currentX) {
+			this.currentX = currentX;
+		}
+
+	public int getCurrentY() {
+		return currentY;
+	}
+
+	public void setCurrentY(int currentY) {
+			this.currentY = currentY;
+		}
+	
+	// Getters and Setters for LabTech position (enemy character).
+	public int getLtCurrentX() {
+		return ltCurrentX;
+	}
+
+	public void setLtCurrentX(int ltCurrentX) {
+		this.ltCurrentX = ltCurrentX;
+	}
+
+	public int getLtCurrentY() {
+		return ltCurrentY;
+	}
+
+	public void setLtCurrentY(int ltCurrentY) {
+		this.ltCurrentY = ltCurrentY;
+	}
+
+	// Game Map Getters and Setters, defines map area boundaries
 	public int getX() {
 		return x;
 	}
@@ -23,21 +60,7 @@ public class GameMap {
 		this.y = y;
 	}
 
-	public int getCurrentX() {
-		return currentX;
-	}
 
-	public void setCurrentX(int currentX) {
-			this.currentX = currentX;
-		}
-
-	public int getCurrentY() {
-		return currentY;
-	}
-
-	public void setCurrentY(int currentY) {
-			this.currentY = currentY;
-		}
 	
 	// Method to move character. If character hits the boundary, wrap around to
 	// other side, like PacMan (2d representation of 3d sphere, walk far enough 
@@ -71,7 +94,21 @@ public class GameMap {
 			} else {
 				this.currentY = this.currentY - 1;
 			}
+		}
 	}
+	
+	public boolean collision(int plX, int plY, int ltX, int ltY) {
+		if ((plX == ltX) && (plY == ltY)) {
+			boolean hasCollided = true;
+			return hasCollided;
+		} else {
+			boolean hascollided = false;
+			return hascollided;
+		}
 	}
-
+		
+//		public int updatePlayers(int plHealth, boolean ltVacc) {
+//			
+//		}
+	
 }
