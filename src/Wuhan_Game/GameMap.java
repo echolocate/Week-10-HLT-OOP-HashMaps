@@ -65,7 +65,7 @@ public class GameMap {
 	// other side, like PacMan (2d representation of 3d sphere, walk far enough 
 	// S or W, appear at other side as if you had travelled invisibly 'behind' map.
 	public void move(String direction) {
-		System.out.println("this.currentX " + this.currentX + " this.x " + this.x);
+		//System.out.println("this.currentX " + this.currentX + " this.x " + this.x);
 		if (direction.equals("N")) {
 			if (this.currentX == this.x) {
 				this.currentX = 0;
@@ -73,21 +73,21 @@ public class GameMap {
 				this.currentX = this.currentX + 1;
 			}
 		} else if (direction.equals("S")) {
-			System.out.println("this.currentX " + this.currentX + " this.x " + this.x);
+			// System.out.println("this.currentX " + this.currentX + " this.x " + this.x);
 			if (this.currentX == 0) {
 				this.currentX = 10;
 			} else {
 				this.currentX = this.currentX - 1;
 			}
 		} else if (direction.equals("E")) {
-			System.out.println("this.currentY " + this.currentY + " this.y " + this.y);
+			// System.out.println("this.currentY " + this.currentY + " this.y " + this.y);
 			if (this.currentY == this.y) {
 				this.currentY = 0;
 			} else {
 				this.currentY = this.currentY + 1;
 			}
 		}  else if (direction.equals("W")) {
-			System.out.println("this.currentY " + this.currentY + " this.y " + this.y);
+			// System.out.println("this.currentY " + this.currentY + " this.y " + this.y);
 			if (this.currentY == 0) {
 				this.currentY = 10;
 			} else {
@@ -106,20 +106,17 @@ public class GameMap {
 		}
 	}
 		
-		public void whoWins(boolean vax, int ltHealth, boolean mutant, int vHealth) {
-			if ((vax = true) && (mutant = true)) {
-				ltHealth -= 1;
-			} else if ((vax = false) && (mutant = true)) {
-				ltHealth -= 5;
-			} else if ((vax = true) && (mutant = false)) {
-				 vHealth = 0;
-			} else if ((vax = false) && (mutant = false)) {
-				mutant = true;
-				// maybe LabTech loses health too ???
-			}
-			
-			
-			
-		}
-	
+//	public int whoWins(boolean vax, int ltHealth, boolean mutant, int vHealth) {
+//		if ((vax = true) && (mutant = true)) {
+//			ltHealth -= 1;
+//		} else if ((vax = false) && (mutant = true)) {
+//			ltHealth -= 5;
+//		} else if ((vax = true) && (mutant = false)) {
+//			vHealth = 0;
+//		} else if ((vax = false) && (mutant = false)) {
+//			mutant = true;
+//			// maybe LabTech loses health too ???
+//		}
+//		return vHealth;
+//	}	
 }

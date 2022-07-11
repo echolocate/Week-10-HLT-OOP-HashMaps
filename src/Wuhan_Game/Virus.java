@@ -1,6 +1,6 @@
 package Wuhan_Game;
 
-public class Virus extends Character{
+public class Virus extends Character {
 	private boolean mutation;
 	
 	public Virus(String name, int health, boolean mutation) {
@@ -14,6 +14,7 @@ public class Virus extends Character{
 
 	public void setMutation(boolean mutation) {
 		this.mutation = mutation;
+		System.out.println("Mutation is now set to " + mutation);
 	}	
 	
 //	public Virus(String name, boolean mutation) {

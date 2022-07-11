@@ -7,13 +7,14 @@ public class LabTech extends Character{
 		super(name, health);
 		this.vaccinated = vaccinated;
 	}
-
+	
 	public boolean isVaccinated() {
 		return vaccinated;
 	}
 
 	public void setVaccinated(boolean vaccinated) {
 		this.vaccinated = vaccinated;
+		System.out.println(this.name + " vaccinated = " + vaccinated);
 	}
 	
 }

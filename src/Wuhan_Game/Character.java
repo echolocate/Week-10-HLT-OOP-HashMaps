@@ -1,11 +1,11 @@
 package Wuhan_Game;
 
 public abstract class Character {	
-		private String name;
-		private int health;
+		public String name;
+		public int health;
 		
 		//Custom Constructor Method
-		public Character(String name,int health) {
+		public Character(String name, int health) {
 			this.name = name;
 			this.health = health;
 		}
@@ -24,10 +24,4 @@ public abstract class Character {
 		public void setHealth(int health) {
 			this.health = health;
 		}
-
-		
-		public void status() {			
-			System.out.println(this.name + " has " + this.health + "health points");
-		}
-
 }
